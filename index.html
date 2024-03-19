@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jersey Shore Jeopardy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .jeopardy-board {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* category styles */
+        .categories {
+            display: flex;
+            justify-content: space-between;
+            background-color: #33cccc; /* Aqua blue */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .category {
+            flex: 1;
+            text-align: center;
+            color: #fff; 
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        /* question styles */
+        .questions {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 10px;
+            margin-top: 20px;
+        }
+
+        .question {
+            background-color: #66ccff; 
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* hover effect for questions */
+        .question:hover {
+            background-color: #008080; 
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="jeopardy-board">
+        <div class="board regular">
+            <div class="categories">
+                <div class="category">Politics</div>
+                <div class="category">Hometowns</div>
+                <div class="category">Smush Room</div>
+                <div class="category">Lore</div>
+                <div class="category">Guidos & Guidettes</div>
+            </div>
+            <div class="questions">
+                <!-- Politics -->
+                <div class="Politics category-questions">
+                    <div class="question">Regardless of their political affiliation, which New Jersey politician is the cast united against?</div>
+                    <div class="question">Which cast member was planning to go to law school before being cast on the original show?</div>
+                    <div class="question">Which cast member appeared on Fox News in 2022?</div>
+                    <div class="question">Which cast member is alleged to be a flat earther?</div>
+                    <div class="question">Which cast member once previously supported Trump openly?</div>
+                </div>
+                <!-- Hometowns -->
+                <div class="Hometowns category-questions">
+                    <div class="question">Which original cast member is the only one to have grown up in New Jersey?</div>
+                    <div class="question">Which cast member is from Rhode Island?</div>
+                    <div class="question">Which New Jersey shore town is Sammie Sweetheart from?</div>
+                    <div class="question">Which town did Snooki grow up in?</div>
+                    <div class="question">True or false: Despite growing up in Staten Island, Angelina and Vinny didn't know each other until meeting each other in the Shore House during season one.</div>
+                </div>
+                <!-- Smush Room -->
+                <div class="Smush-Room category-questions">
+                    <div class="question">What was the cast’s nickname for an unattractive woman?</div>
+                    <div class="question">Which cast members were the first to hookup in Jersey Shore history?</div>
+                    <div class="question">True or false: The sheets of the smush room were always changed between used.</div>
+                    <div class="question">How many times has Angelina been engaged?</div>
+                    <div class="question">What is the first legal name of JWoww’s new fiancé?</div>
+                </div>
+                <!-- Lore -->
+                <div class="Lore category-questions">
+                    <div class="question">Who wrote the note?</div>
+                    <div class="question">Which cast member bashed their head into the wall and injured their neck while in Italy?</div>
+                    <div class="question">Which cast member famously said, “You can stay and get your ass beat”?</div>
+                    <div class="question">How many seasons of the original show were set in Seaside Heights?</div>
+                    <div class="question">What kind of storefront did the cast work for during season two?</div>
+                </div>
+                <!-- Guidos & Guidettes -->
+                <div class="Guidos-&-Guidettes category-questions">
+                    <div class="question">What is Snooki’s first and last legal names?</div>
+                    <div class="question">What is the Situation’s first and last legal names?</div>
+                    <div class="question">The word “guido” is derived from which Italian word?</div>
+                    <div class="question">“Cooch” is derived from the Italian word “ciuccio,” meaning what?</div>
+                    <div class="question">Which two cast members do not have any Italian-American ancestry?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const politicsQuestions = [
+         {
+            questionText: "Regardless of their political affiliation, which New Jersey politician is the cast united against?",
+            answer: "Chris Christie",
+            pointValue: 200
+        },
+         {
+            questionText: "Which cast member was planning to go to law school before being cast on the original show?",
+            answer: "Vinny Guadagnino",
+            pointValue: 400
+        },
+        {
+            questionText: "Which cast member appeared on Fox News in 2022?",
+            answer: "Pauly D",
+            pointValue: 600
+         },
+
+// need to account the code for multiple answers i.e. Mike "the Situation" Sorrentino, The Situation, Situation, Mike the Situation, Mike The Situation, Mike, Mike Sorreentino (likely will do this for all cast members, i.e. Snookie/Nicole and JWoww/Jenni)
+        {
+            questionText: "Which cast member is alleged to be a flat earther?",
+            answer: "Mike the Situation",
+            pointValue: 800
+        },
+
+// also need to write the code to make this question a Daily Double
+
+        {
+            questionText: "Which cast member once previously supported Trump openly?",
+            answer: "Snooki",
+            pointValue: 1000
+        }
+];
+
+        const hometownsQuestions = [
+                {
+                    questionText: "Which original season one cast member is the only one to have grown up in New Jersey?",
+                    answer: "Snooki",
+                    pointValue: 200
+                },
+                {
+                    questionText: "Which cast member is from Rhode Island?",
+                    answer: "Pauly D",
+                    pointValue: 400
+                },
+                {
+                    questionText: "Which New Jersey shore town is Sammie Sweetheart from?",
+                    answer: "Hazlet",
+                    pointValue: 600
+                },
+                {
+                    questionText: "Which New Jersey town did Snooki grow up in?",
+                    answer: "New Egypt",
+                    pointValue: 800
+                },
+                {
+                    questionText: "True or false: Despite growing up in Staten Island, Angelina and Vinny didn't know each other until meeting each other in the Shore House during season one.",
+                    answer: "false",
+                    pointValue: 1000
+                },
+        ];
+
+        const smushRoomQuestions = [
+                {
+                    questionText: "What was the cast’s nickname for an unattractive woman?",
+                    answer: "grenade",
+                    pointValue: 200
+                },
+                {
+                    questionText: "Which cast members were the first to hookup in Jersey Shore history?",
+                    answer: "Pauly D and JWoww",
+                    pointValue: 400
+                },
+                {
+                    questionText: "True or false: The sheets of the smush room were always changed between used.",
+                    answer: "false",
+                    pointValue: 600
+                },
+                {
+                    questionText: "How many times has Angelina been engaged?",
+                    answer: "3 times",
+                    pointValue: 800
+                },
+                {
+                    questionText: "What is the first legal name of JWoww’s new fiancé?",
+                    answer: "Zach",
+                    pointValue: 1000
+                },
+        ];
+
+        const loreQuestions = [
+                {
+                    questionText: "Who wrote the note?",
+                    answer: "Snooki and JWoww",
+                    pointValue: 200
+                },
+                {
+                    questionText: "Which cast member bashed their head into the wall and injured their neck while in Italy?",
+                    answer: "The Situation",
+                    pointValue: 400
+                },
+                {
+                    questionText: "Which cast member famously said, “You can stay and get your ass beat”?",
+                    answer: "JWoww",
+                    pointValue: 600
+                },
+                {
+                    questionText: "How many seasons of the original show were set in Seaside Heights?",
+                    answer: "four",
+                    pointValue: 800
+                },
+                {
+                    questionText: "What kind of storefront did the cast work in Miami for during season two?",
+                    answer: "ice cream show",
+                    pointValue: 1000
+                },
+        ];
+
+        const guidosGuidettesQuestions = [
+                {
+                    questionText: "What is Snooki’s first and last legal names?",
+                    answer: "Nicole Polizzi",
+                    pointValue: 200
+                },
+                {
+                    questionText: "What is the Situation’s first and last legal names?",
+                    answer: "Mike Sorrentino",
+                    pointValue: 400
+                },
+                {
+                    questionText: "The word “guido” means what in Italian?",
+                    answer: "guy",
+                    pointValue: 600
+                },
+                {
+                    questionText: "“Cooch” is derived from the Italian word “ciuccio,” meaning what?",
+                    answer: "dummy",
+                    pointValue: 800
+                },
+                {
+                    questionText: "Which two cast members do not have any Italian-American ancestry?",
+                    answer: "Snooki and JWoww",
+                    pointValue: 1000
+                },
+        ];
+
+        let currentCategory = "";
+        let selectedQuestion = null;
+        let userScore = 0;
+        let questionStatus = false;
+
+        function initializeVariables() {
+            currentCategory = "";
+            selectedQuestion = null;
+            userScore = 0;
+            questionStatus = false;
+            const categories = retrieveCategoriesFromDOM();
+            displayGameBoard(categories);
+        }
+
+        function retrieveCategoriesFromDOM() {
+            const categoriesContainer = document.querySelector('.categories');
+            const categories = [];
+            const categoryElements = categoriesContainer.querySelectorAll('.category');
+            categoryElements.forEach(categoryElement => {
+                categories.push(categoryElement.textContent.trim());
+            });
+            console.log(categories);
+            return categories;
+        }
+
+        function displayGameBoard(categories) {
+            console.log(categories);
+            const questionsContainer = document.querySelector('.questions');
+            categories.forEach(category => {
+                const categoryNameWithDashes = category.replace(" " , "-");
+                const categoryElement = document.querySelector("." + categoryNameWithDashes);
+                console.log(categoryElement);
+                const categoryQuestions = window[`${category.toLowerCase()}Questions`]; // Access questions array dynamically
+                categoryQuestions.forEach(question => {
+                    const questionElement = document.createElement('div');
+                    questionElement.classList.add('question');
+                    questionElement.textContent = question.questionText;
+                    questionsContainer.appendChild(questionElement);
+                });
+
+            });
+        }
+
+        initializeVariables();
+    </script>
+</body>
+</html>
