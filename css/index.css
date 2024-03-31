@@ -2,6 +2,9 @@ body {
     background-color: #683B87;
     color: #ffffff;
     font-family: "Oswald";
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 40px;
 }
 
 section {
@@ -38,15 +41,90 @@ footer {
 
 img {
     float: right;
-    margin: 5px;
 }
 
 a {
-    text-decoration: none; /* Remove default underline */
-    color: #ffffff; /* Change link color */
+    text-decoration: none; 
+    color: #ffffff; 
 }
 
 a:hover {
-    text-decoration: underline; /* Add underline on hover */
-    color: #B34F87; /* Change link color on hover */
+    text-decoration: underline; 
+    color: #B34F87; 
+}
+
+nav {
+    background-color: #5F68D9;
+    color: #fff;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 10px;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#experience {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 20px; 
+}
+
+.job-title,
+.job-dates {
+    flex: 1;
+}
+
+.job-description {
+    flex: 1;
+    font-size: 12px;
+}
+
+.job-title {
+    font-weight: bold;
+    margin-right: 10px; 
+}
+
+.job-dates {
+    margin-left: auto;
+}
+
+#social-media {
+    display: flex;
+    justify-content: center; 
+}
+
+#social-media a {
+    margin: 0 10px;
+    color: #ffffff; 
+    font-size: 20px; 
+    text-decoration: none; 
+}
+
+#social-media a:hover {
+    text-decoration: underline; 
+    color: #B34F87; 
 }
