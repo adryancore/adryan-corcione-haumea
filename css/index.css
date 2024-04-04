@@ -1,0 +1,130 @@
+body {
+    background-color: #683B87;
+    color: #ffffff;
+    font-family: "Oswald";
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 40px;
+}
+
+section {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+h1 {
+    font-size: 50px;
+    font-style: italic; 
+    text-align: center;
+    color: #C2ADFF;
+    background-color: #B34F87;
+    text-transform: capitalize;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold; 
+    color: #5F68D9;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold; 
+    font-style: italic; 
+    color: #C2ADFF;
+    background-color: #B34F87;
+}
+
+footer {
+    text-align: center; 
+}
+
+img {
+    float: right;
+}
+
+a {
+    text-decoration: none; 
+    color: #ffffff; 
+}
+
+a:hover {
+    text-decoration: underline; 
+    color: #B34F87; 
+}
+
+nav {
+    background-color: #5F68D9;
+    color: #fff;
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 10px;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#experience {
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: row; 
+    margin-bottom: 20px; 
+}
+
+.job-title,
+.job-dates {
+    flex: 1;
+}
+
+.job-description {
+    flex: 1;
+    font-size: 12px;
+}
+
+.job-title {
+    font-weight: bold;
+    margin-right: 10px; 
+}
+
+.job-dates {
+    margin-left: auto;
+}
+
+#social-media {
+    display: flex;
+    justify-content: center; 
+}
+
+#social-media a {
+    margin: 0 10px;
+    color: #ffffff; 
+    font-size: 20px; 
+    text-decoration: none; 
+}
+
+#social-media a:hover {
+    text-decoration: underline; 
+    color: #B34F87; 
+}
