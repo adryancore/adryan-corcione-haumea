@@ -1,3 +1,4 @@
+/* Global Base Styles */
 body {
     background-color: #683B87;
     color: #ffffff;
@@ -13,56 +14,57 @@ section {
 }
 
 h1 {
-    font-size: 50px;
-    font-style: italic; 
+    font-size: 32px; /* Optimized for mobile */
+    font-style: italic;
     text-align: center;
     color: #C2ADFF;
-    background-color: #B34F87;
     text-transform: capitalize;
 }
 
-h2 {
-    font-size: 24px;
-    font-weight: bold; 
-    color: #5F68D9;
-}
-
-h3 {
-    font-size: 22px;
-    font-weight: bold; 
-    font-style: italic; 
+h2, h3 {
+    font-size: 20px; /* Optimized for mobile */
+    font-weight: bold;
+    font-style: italic;
     color: #C2ADFF;
     background-color: #B34F87;
 }
 
 footer {
-    text-align: center; 
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    bottom: 0;
+    left: 0;           
+    position: relative; 
 }
+
 
 img {
     float: right;
 }
 
 a {
-    text-decoration: none; 
-    color: #ffffff; 
+    text-decoration: none;
+    color: #ffffff;
 }
 
 a:hover {
-    text-decoration: underline; 
-    color: #B34F87; 
+    text-decoration: underline;
+    color: #B34F87;
 }
 
 nav {
     background-color: #5F68D9;
     color: #fff;
     max-width: 1200px;
+    width: 100%;
     margin: auto;
     padding-top: 10px;
-    position: fixed; 
-    width: 100%; 
-    top: 0; 
-    z-index: 1000; 
+    position: fixed;
+    top: 0;
+    z-index: 1000;
     text-align: center;
 }
 
@@ -113,18 +115,69 @@ nav ul li a {
 }
 
 #social-media {
-    display: flex;
-    justify-content: center; 
+    justify-content: center;
 }
 
 #social-media a {
     margin: 0 10px;
-    color: #ffffff; 
-    font-size: 20px; 
-    text-decoration: none; 
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
 }
 
 #social-media a:hover {
-    text-decoration: underline; 
-    color: #B34F87; 
+    text-decoration: underline;
+    color: #B34F87;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Media Queries for Tablet and Desktop */
+
+@media (min-width: 768px) {
+    /* Tablet Devices */
+    h1 {
+        font-size: 40px;
+        color: #FFD700;
+    }
+
+    nav {
+        background-color: #4F759B;
+        padding-top: 20px 0;
+    }
+
+    h2, h3 {
+        font-size: 22px; 
+        color: #FFD700;
+    }
+
+    .job-description {
+        font-size: 14px;
+        color: #E6E6FA;
+    }
+}
+
+@media (min-width: 1024px) {
+    /* Desktop Devices */
+    h1 {
+        font-size: 50px;
+        background-color: #8A2BE2;
+    }
+
+    nav {
+        background-color: #6495ED;
+        padding-top: 30px 0;
+    }
+
+    h2, h3 {
+        font-size: 24px; 
+        color: #8A2BE2; 
+    }
+
+    .job-description {
+        font-size: 16px;
+        color: #B0C4DE;
+    }
 }
