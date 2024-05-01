@@ -54,8 +54,6 @@ footer {
     order: 2; 
 }
 
-
-
 a {
     text-decoration: none;
     color: #ffffff;
@@ -145,13 +143,40 @@ html {
     scroll-behavior: smooth;
 }
 
+.form {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.button {
+    font-family: "Oswald";
+    color:  #ffffff;
+    font-size: 18px;
+    text-transform: uppercase;
+    background-color:  #8A2BE2;
+    border: 0px;
+}
+
+button:hover {
+    background-color:#B34F87;
+}
+
+.textarea, .input {
+    font-family: "Oswald";
+    color: #ffffff;
+    font-size: 14px;
+    background-color: #5F68D9;
+    border: 0px;
+}
+
 /* Media Queries for Tablet and Desktop */
 
 @media (min-width: 768px) {
     /* Tablet Devices */
     h1 {
         font-size: 40px;
-        color: #FFD700;
+        color:  #6495ED;
     }
 
     nav {
@@ -161,12 +186,12 @@ html {
 
     h2, h3 {
         font-size: 22px; 
-        color: #FFD700;
+        color:#ffffff;
     }
 
     .job-description {
         font-size: 14px;
-        color: #E6E6FA;
+        color: #ffffff;
     }
 }
 
