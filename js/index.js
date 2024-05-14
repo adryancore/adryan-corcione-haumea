@@ -81,3 +81,23 @@ document.addEventListener('DOMContentLoaded', function () {
     toggleMessagesSection(); 
     });
 });
+
+const projectSection = document.querySelector("#projects");
+const projectsList = projectSection.querySelector("ul");
+
+fetch ("https://api.github.com/users/adryancore/repos")
+    .then((res) => {
+        return res.json();
+})
+.then((data) => {
+    for (let i = 0; i < data.length; i++) {
+        const project = document.createElement("li");
+        project.innerText = data[i].name;
+        projectsList.appendChild(project);
+    }
+})
+.catch((error) => {
+    const errorElement = document.createElement("p");
+    errorElement.innerText = error.message;
+    projectsSection.appendChild(errorElement);
+});
