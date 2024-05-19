@@ -2,13 +2,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const footer = document.createElement('footer');
     document.body.appendChild(footer);
 
+    // copyright logo, current year, and name in footer
     let today = new Date();
     let thisYear = today.getFullYear();
 
     let copyright = document.createElement('p');
-    copyright.innerHTML = `&copy; ${thisYear} Corcione Consulting`;
+    copyright.innerHTML = `&copy; ${thisYear} Adryan Corcione`;
     footer.appendChild(copyright);
 
+    // create skills for html to pull
     const skills = ["JavaScript", "HTML", "CSS", "GitHub"];
     const skillsSection = document.getElementById('skills');
     const skillsList = skillsSection.querySelector('ul');
@@ -19,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         skillsList.appendChild(skill);
     }
 
+    // develop messages section
     const messageForm = document.forms.leave_message;
 
     const messageSection = document.getElementById('messages');
@@ -82,22 +85,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-const projectSection = document.querySelector("#projects");
-const projectsList = projectSection.querySelector("ul");
+    // API fetch from GitHub for projects section
+    const projectSection = document.querySelector("#projects");
+    const projectsList = projectSection.querySelector("ul");
 
-fetch ("https://api.github.com/users/adryancore/repos")
-    .then((res) => {
-        return res.json();
+    fetch ("https://api.github.com/users/adryancore/repos")
+        .then((res) => {
+            return res.json();
 })
-.then((data) => {
-    for (let i = 0; i < data.length; i++) {
-        const project = document.createElement("li");
-        project.innerText = data[i].name;
-        projectsList.appendChild(project);
+
+    .then((data) => {
+        for (let i = 0; i < data.length; i++) {
+            const project = document.createElement("li");
+            project.innerText = data[i].name;
+            projectsList.appendChild(project);
     }
 })
-.catch((error) => {
-    const errorElement = document.createElement("p");
-    errorElement.innerText = error.message;
-    projectsSection.appendChild(errorElement);
+    .catch((error) => {
+        const errorElement = document.createElement("p");
+        errorElement.innerText = error.message;
+        projectsSection.appendChild(errorElement);
 });
