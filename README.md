@@ -28,8 +28,3 @@ You will need a modern web browser to run this project.
     open index.html
     ```
     or simply double-click the `index.html` file.
-
-### Usage
-
-- When you open the `index.html` file, it will fetch and display a random cat and dog image along with their breed information once you click the prospective cat or dog links.
-- The cat and dog images, along with their breed names and temperaments, will be displayed on their prospective pages.

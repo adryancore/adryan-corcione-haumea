@@ -104,5 +104,5 @@ document.addEventListener('DOMContentLoaded', function () {
     .catch((error) => {
         const errorElement = document.createElement("p");
         errorElement.innerText = error.message;
-        projectsSection.appendChild(errorElement);
+        projectSection.appendChild(errorElement);
 });
